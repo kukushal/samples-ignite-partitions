@@ -22,7 +22,7 @@ spec:
         - name: OPTION_LIBS
           value: ignite-kubernetes,ignite-rest-http
         - name: CONFIG_URI
-          value: https://raw.githubusercontent.com/apache/ignite/master/modules/kubernetes/config/example-kube-persistence.xml
+          value: https://github.com/kukushal/samples-ignite-partitions/blob/dev/src/test/resources/k8s-ignite-server.xml
         - name: IGNITE_QUIET
           value: "false"
         - name: JVM_OPTS
@@ -36,7 +36,7 @@ spec:
         - containerPort: 8080 # REST port number.
         - containerPort: 10900 #Thin clients port number.
         volumeMounts:
-        - mountPath: "/data/ignite"
+        - mountPath: "/Users/kukushal/Dev/samples-ignite-partitions"
           name: ignite-storage
   volumeClaimTemplates:
   - metadata:
@@ -45,4 +45,4 @@ spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
-          storage: 1Gi
+          storage: 5Gi
